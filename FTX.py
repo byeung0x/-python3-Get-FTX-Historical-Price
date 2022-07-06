@@ -1,8 +1,6 @@
 
 import requests
 import pandas as pd
-import time as time
-import time
 
 def get_price(market_name,resolution,start_time='',end_time=''):
     if end_time != '':
@@ -19,8 +17,6 @@ def get_price(market_name,resolution,start_time='',end_time=''):
     df1 = pd.DataFrame(r1)
 
     return [df1['time'].min(),df1]
-
-
 
 def get_FTX_historical_price(market_name,resolution): #market_name please follow name on FTX website #resolution is in second(s)
     start_time = ''
@@ -51,6 +47,5 @@ def get_FTX_historical_price(market_name,resolution): #market_name please follow
 #fixed parameter
 market_name = 'CRV/USD'
 resolution = 60*60
-#variable parameter
 
 print(get_FTX_historical_price(market_name,resolution))
